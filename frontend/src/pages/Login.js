@@ -49,12 +49,20 @@ const demoLogin = async (role) => {
   if (!list || list.length === 0) return;
 
   const random = list[Math.floor(Math.random() * list.length)];
-  setForm(random);
 
-  // 🔥 Auto submit (login) after filling
-  setTimeout(() => {
-    handleSubmit({ preventDefault: () => {} });
-  }, 100);
+  // 🔥 Directly call login instead of relying on state update
+  try {
+    setLoading(true);
+    const user = await login(random.email, random.password);
+    toast.success(`Welcome back, ${user.name}!`);
+    if (user.role === 'admin') navigate('/admin/dashboard');
+    else if (user.role === 'supplier') navigate('/supplier/dashboard');
+    else navigate('/dashboard');
+  } catch (err) {
+    toast.error(err.response?.data?.message || 'Demo login failed');
+  } finally {
+    setLoading(false);
+  }
 };
 
   return (
