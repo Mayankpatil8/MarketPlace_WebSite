@@ -5,7 +5,7 @@ export const defaultProducts = [
     _id: "default-1",
     isDemo: true,
     name: "ABB ACS580 Industrial Motor Drive",
-    price: 245000,
+    price: 3000,
     unit: "unit",
     category: "motors",
     stock: 12,
@@ -28,7 +28,7 @@ export const defaultProducts = [
   {
     _id: "default-2",
     name: "Solar Panel 550W Mono PERC",
-    price: 18500,
+    price: 2800,
     unit: "panel",
     category: "electronics",
     stock: 50,
@@ -74,7 +74,7 @@ export const defaultProducts = [
   {
     _id: "default-4",
     name: "Defence Surveillance Camera System",
-    price: 125000,
+    price: 7265,
     unit: "set",
     category: "defence",
     stock: 5,
@@ -97,7 +97,7 @@ export const defaultProducts = [
   {
     _id: "default-5",
     name: "Siemens S7-1200 PLC Controller",
-    price: 78000,
+    price: 4622,
     unit: "unit",
     category: "electronics",
     stock: 15,
@@ -120,7 +120,7 @@ export const defaultProducts = [
   {
     _id: "default-6",
     name: "Schneider Electric Industrial Power Contactor",
-    price: 3200,
+    price: 959,
     unit: "piece",
     category: "electronics",
     stock: 100,
