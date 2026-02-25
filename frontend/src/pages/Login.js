@@ -31,6 +31,27 @@ export default function Login() {
     }
   };
 
+const demoAccounts = {
+  customer: [
+    { email: "demo.customer@test.com", password: "123456" },
+    { email: "demo.customer2@test.com", password: "123456" },
+  ],
+  supplier: [
+    { email: "demo.supplier@test.com", password: "123456" },
+  ],
+  admin: [
+    { email: "demo.admin@test.com", password: "123456" },
+  ],
+};
+
+const fillRandomDemo = (type) => {
+  const list = demoAccounts[type];
+  if (!list || list.length === 0) return;
+
+  const random = list[Math.floor(Math.random() * list.length)];
+  setEmail(random.email);
+  setPassword(random.password);
+};
 
   return (
     <div className="auth-container">
