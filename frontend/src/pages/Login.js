@@ -31,39 +31,6 @@ export default function Login() {
     }
   };
 
-const demoLogin = async (role) => {
-  const demos = {
-    customer: [
-      { email: 'customer@demo.com', password: 'demo1234' },
-      { email: 'customer2@demo.com', password: 'demo1234' },
-    ],
-    supplier: [
-      { email: 'supplier@demo.com', password: 'demo1234' },
-    ],
-    admin: [
-      { email: 'admin@demo.com', password: 'demo1234' },
-    ],
-  };
-
-  const list = demos[role];
-  if (!list || list.length === 0) return;
-
-  const random = list[Math.floor(Math.random() * list.length)];
-
-  // 🔥 Directly call login instead of relying on state update
-  try {
-    setLoading(true);
-    const user = await login(random.email, random.password);
-    toast.success(`Welcome back, ${user.name}!`);
-    if (user.role === 'admin') navigate('/admin/dashboard');
-    else if (user.role === 'supplier') navigate('/supplier/dashboard');
-    else navigate('/dashboard');
-  } catch (err) {
-    toast.error(err.response?.data?.message || 'Demo login failed');
-  } finally {
-    setLoading(false);
-  }
-};
 
   return (
     <div className="auth-container">
