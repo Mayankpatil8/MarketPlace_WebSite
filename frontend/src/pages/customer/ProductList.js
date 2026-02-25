@@ -114,7 +114,7 @@ export default function ProductList() {
                     <div className="product-name">{p.name}</div>
                     <div className="product-supplier">{p.supplier?.company || p.supplier?.name}</div>
                     <div className="product-meta">
-                      <div className="product-price">₹{p.price?.toLocaleString()}<span>/{p.unit}</span></div>
+                      <div className="product-price">€{p.price?.toLocaleString()}<span>/{p.unit}</span></div>
                       <div className="product-rating">
                         <FiStar/>{p.rating?.toFixed(1) || '—'}
                       </div>
