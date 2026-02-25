@@ -32,9 +32,10 @@ export default function Login() {
   };
 
   const demoLogin = (role) => {
+  console.log("Demo clicked:", role); // 👈 add this
   const demos = {
     customer: [
-      { email: 'customer@demo.com', password: 'demo1234' },
+      { email: 'customer@demmo.co', password: 'demo1234' },
       { email: 'customer2@demo.com', password: 'demo1234' },
     ],
     supplier: [
@@ -62,7 +63,9 @@ export default function Login() {
         <div className="demo-btns">
           <span>Demo:</span>
           {['customer','supplier','admin'].map(r => (
-            <button key={r} className="btn btn-outline btn-sm" onClick={() => demoLogin(r)}>{r}</button>
+            <button key={r} className="btn btn-outline btn-sm" onClick={() => demoLogin(r)}>
+                {r}
+           </button>
           ))}
         </div>
 

@@ -3,6 +3,7 @@
 export const defaultProducts = [
   {
     _id: "default-1",
+    isDemo: true,
     name: "ABB ACS580 Industrial Motor Drive",
     price: 245000,
     unit: "unit",
