@@ -31,14 +31,26 @@ export default function Login() {
     }
   };
 
-  const demoLogin = async (role) => {
-    const demos = {
-      customer: { email: 'customer@demo.com', password: 'demo1234' },
-      supplier: { email: 'supplier@demo.com', password: 'demo1234' },
-      admin: { email: 'admin@demo.com', password: 'demo1234' },
-    };
-    setForm(demos[role]);
+  const demoLogin = (role) => {
+  const demos = {
+    customer: [
+      { email: 'customer@demo.com', password: 'demo1234' },
+      { email: 'customer2@demo.com', password: 'demo1234' },
+    ],
+    supplier: [
+      { email: 'supplier@demo.com', password: 'demo1234' },
+    ],
+    admin: [
+      { email: 'admin@demo.com', password: 'demo1234' },
+    ],
   };
+
+  const list = demos[role];
+  if (!list || list.length === 0) return;
+
+  const random = list[Math.floor(Math.random() * list.length)];
+  setForm(random); // ✅ only fills form, does NOT auto-login
+};
 
   return (
     <div className="auth-container">
