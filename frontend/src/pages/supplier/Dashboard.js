@@ -43,7 +43,7 @@ export default function SupplierDashboard() {
           { label: 'My Products', value: stats.products, icon: FiBox, to: '/supplier/products', color:'#dbeafe', ic:'#1e40af' },
           { label: 'My Deals', value: stats.deals, icon: FiBriefcase, to: '/supplier/deals', color:'#d1fae5', ic:'#065f46' },
           { label: 'Total Orders', value: stats.orders, icon: FiPackage, to: '/supplier/orders', color:'#fef3c7', ic:'#92400e' },
-          { label: 'Revenue Earned', value: `₹${Math.round(stats.revenue).toLocaleString()}`, icon: FiTrendingUp, to: '/supplier/orders', color:'#fce7f3', ic:'#9d174d' },
+          { label: 'Revenue Earned', value: `€${Math.round(stats.revenue).toLocaleString()}`, icon: FiTrendingUp, to: '/supplier/orders', color:'#fce7f3', ic:'#9d174d' },
         ].map(({ label, value, icon: Icon, to, color, ic }) => (
           <Link key={label} to={to} className="card stat-card" style={{textDecoration:'none'}}>
             <div style={{width:44,height:44,borderRadius:10,background:color,color:ic,display:'flex',alignItems:'center',justifyContent:'center',fontSize:20,marginBottom:12}}>
@@ -71,7 +71,7 @@ export default function SupplierDashboard() {
                     <tr key={o._id}>
                       <td style={{fontSize:11}}>{o.orderNumber}</td>
                       <td>{o.customer?.name}</td>
-                      <td>₹{o.totalAmount?.toLocaleString()}</td>
+                      <td>€{o.totalAmount?.toLocaleString()}</td>
                       <td><span className={`badge badge-${o.status==='delivered'?'green':o.status==='pending'?'yellow':'blue'}`}>{o.status}</span></td>
                     </tr>
                   ))}
@@ -94,7 +94,7 @@ export default function SupplierDashboard() {
                   {recentDeals.map(d => (
                     <tr key={d._id}>
                       <td><strong style={{fontSize:13}}>{d.title}</strong></td>
-                      <td>₹{d.totalValue?.toLocaleString()}</td>
+                      <td>€{d.totalValue?.toLocaleString()}</td>
                       <td><span className={`badge badge-${d.status==='completed'?'green':d.status==='proposed'?'yellow':'blue'}`}>{d.status}</span></td>
                     </tr>
                   ))}

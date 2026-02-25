@@ -57,7 +57,7 @@ export default function ProfitLoss() {
           { label: 'Supplier Payouts', value: totals.payout, color: '#fee2e2', textColor: '#991b1b' },
         ].map(({ label, value, color, textColor }) => (
           <div key={label} className="card stat-card" style={{background: color, border: 'none'}}>
-            <div className="stat-value" style={{color: textColor}}>₹{Math.round(value).toLocaleString()}</div>
+            <div className="stat-value" style={{color: textColor}}>€{Math.round(value).toLocaleString()}</div>
             <div className="stat-label" style={{color: textColor, opacity: .8}}>{label}</div>
           </div>
         ))}
@@ -69,7 +69,7 @@ export default function ProfitLoss() {
           <div>
             <div style={{fontSize: 13, opacity: .6, marginBottom: 6, textTransform: 'uppercase', letterSpacing: '.5px'}}>Net Platform Profit ({year})</div>
             <div style={{fontFamily: 'Syne', fontSize: 42, fontWeight: 800, color: '#f59e0b'}}>
-              ₹{Math.round(totals.fees).toLocaleString()}
+              €{Math.round(totals.fees).toLocaleString()}
             </div>
             <div style={{fontSize: 13, opacity: .5, marginTop: 4}}>From {data?.monthly?.reduce((a,m) => a + m.orderCount, 0) || 0} paid orders</div>
           </div>
@@ -84,8 +84,8 @@ export default function ProfitLoss() {
           <ResponsiveContainer width="100%" height={320}>
             <BarChart data={chartData} barSize={16}>
               <XAxis dataKey="month" tick={{fontSize: 12}} />
-              <YAxis tick={{fontSize: 12}} tickFormatter={v => `₹${(v/1000).toFixed(0)}K`} />
-              <Tooltip formatter={v => `₹${v.toLocaleString()}`} />
+              <YAxis tick={{fontSize: 12}} tickFormatter={v => `€${(v/1000).toFixed(0)}K`} />
+              <Tooltip formatter={v => `€${v.toLocaleString()}`} />
               <Legend />
               <Bar dataKey="Order Revenue" fill="#0f172a" radius={[3,3,0,0]} />
               <Bar dataKey="Platform Fees" fill="#f59e0b" radius={[3,3,0,0]} />
@@ -117,21 +117,21 @@ export default function ProfitLoss() {
                 return (
                   <tr key={row.month}>
                     <td><strong>{row.month}</strong></td>
-                    <td>₹{row['Order Revenue'].toLocaleString()}</td>
-                    <td style={{color: 'var(--success)'}}>₹{((data?.monthly?.find(m=>m._id===i+1)?.platformFees)||0).toLocaleString()}</td>
-                    <td>₹{row['Deal Revenue'].toLocaleString()}</td>
-                    <td style={{color: 'var(--success)'}}>₹{(d.dealFees||0).toLocaleString()}</td>
-                    <td><strong style={{color: earnings > 0 ? 'var(--success)' : 'var(--danger)'}}>₹{earnings.toLocaleString()}</strong></td>
+                    <td>€{row['Order Revenue'].toLocaleString()}</td>
+                    <td style={{color: 'var(--success)'}}>€{((data?.monthly?.find(m=>m._id===i+1)?.platformFees)||0).toLocaleString()}</td>
+                    <td>€{row['Deal Revenue'].toLocaleString()}</td>
+                    <td style={{color: 'var(--success)'}}>€{(d.dealFees||0).toLocaleString()}</td>
+                    <td><strong style={{color: earnings > 0 ? 'var(--success)' : 'var(--danger)'}}>€{earnings.toLocaleString()}</strong></td>
                   </tr>
                 );
               })}
               <tr style={{background:'#f8fafc', fontWeight:700}}>
                 <td>TOTAL</td>
-                <td>₹{Math.round(totals.revenue).toLocaleString()}</td>
-                <td style={{color:'var(--success)'}}>₹{Math.round(totals.fees - (data?.dealMonthly?.reduce((a,m)=>a+m.dealFees,0)||0)).toLocaleString()}</td>
-                <td>₹{Math.round(totals.deals).toLocaleString()}</td>
-                <td style={{color:'var(--success)'}}>₹{Math.round(data?.dealMonthly?.reduce((a,m)=>a+m.dealFees,0)||0).toLocaleString()}</td>
-                <td><strong style={{color:'var(--success)'}}>₹{Math.round(totals.fees).toLocaleString()}</strong></td>
+                <td>€{Math.round(totals.revenue).toLocaleString()}</td>
+                <td style={{color:'var(--success)'}}>€{Math.round(totals.fees - (data?.dealMonthly?.reduce((a,m)=>a+m.dealFees,0)||0)).toLocaleString()}</td>
+                <td>€{Math.round(totals.deals).toLocaleString()}</td>
+                <td style={{color:'var(--success)'}}>€{Math.round(data?.dealMonthly?.reduce((a,m)=>a+m.dealFees,0)||0).toLocaleString()}</td>
+                <td><strong style={{color:'var(--success)'}}>€{Math.round(totals.fees).toLocaleString()}</strong></td>
               </tr>
             </tbody>
           </table>

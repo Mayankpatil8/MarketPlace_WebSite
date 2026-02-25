@@ -83,7 +83,7 @@ export default function ManageProducts() {
             </div>
             <div className="form-group"><label className="input-label">Description</label><textarea className="input" name="description" rows={3} value={form.description} onChange={handleChange} /></div>
             <div className="form-row">
-              <div className="form-group"><label className="input-label">Price (₹) *</label><input className="input" type="number" name="price" value={form.price} onChange={handleChange} /></div>
+              <div className="form-group"><label className="input-label">Price (€) *</label><input className="input" type="number" name="price" value={form.price} onChange={handleChange} /></div>
               <div className="form-group"><label className="input-label">Stock Quantity</label><input className="input" type="number" name="stock" value={form.stock} onChange={handleChange} /></div>
             </div>
             <div className="form-row">
@@ -112,7 +112,7 @@ export default function ManageProducts() {
                   <tr key={p._id}>
                     <td><strong>{p.name}</strong>{p.isRestricted && <span title="Defence grade" style={{marginLeft:6}}>🛡️</span>}</td>
                     <td><span className="badge badge-blue">{p.category}</span></td>
-                    <td>₹{p.price?.toLocaleString()}</td>
+                    <td>€{p.price?.toLocaleString()}</td>
                     <td><span style={{color: p.stock < 10 ? 'var(--danger)' : 'inherit', fontWeight: p.stock < 10 ? 700 : 400}}>{p.stock}</span></td>
                     <td>{p.totalSold || 0}</td>
                     <td>{p.views || 0}</td>

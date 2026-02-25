@@ -29,7 +29,7 @@ export default function SupplierOrders() {
         <div><h1>My Orders</h1><p>Orders containing your products</p></div>
         <div className="card" style={{padding:'12px 20px',textAlign:'right'}}>
           <div style={{fontSize:12,color:'var(--muted)'}}>Total Revenue</div>
-          <div style={{fontFamily:'Syne',fontSize:22,fontWeight:800,color:'var(--success)'}}>₹{Math.round(totalRevenue).toLocaleString()}</div>
+          <div style={{fontFamily:'Syne',fontSize:22,fontWeight:800,color:'var(--success)'}}>€{Math.round(totalRevenue).toLocaleString()}</div>
         </div>
       </div>
 
@@ -50,7 +50,7 @@ export default function SupplierOrders() {
                       <td>
                         {o.items?.map(i=><div key={i._id} style={{fontSize:12}}>{i.name} × {i.quantity}</div>)}
                       </td>
-                      <td><strong>₹{o.totalAmount?.toLocaleString()}</strong></td>
+                      <td><strong>€{o.totalAmount?.toLocaleString()}</strong></td>
                       <td><span className={`badge badge-${o.paymentStatus==='paid'?'green':o.paymentStatus==='refunded'?'red':'yellow'}`}>{o.paymentStatus}</span></td>
                       <td><span className={`badge badge-${o.status==='delivered'?'green':o.status==='pending'?'yellow':o.status==='cancelled'?'red':'blue'}`}>{o.status}</span></td>
                       <td>{new Date(o.createdAt).toLocaleDateString('en-IN')}</td>

@@ -79,7 +79,7 @@ useEffect(() => {
           </div>
 
           <div style={{fontSize:36,fontFamily:'Syne',fontWeight:800,color:'var(--primary)',marginBottom:8}}>
-            ₹{product.price?.toLocaleString()} <span style={{fontSize:16,fontWeight:400,color:'var(--muted)'}}>per {product.unit}</span>
+            €{product.price?.toLocaleString()} <span style={{fontSize:16,fontWeight:400,color:'var(--muted)'}}>per {product.unit}</span>
           </div>
 
           <div style={{fontSize:13,color:'var(--muted)',marginBottom:20}}>
@@ -104,7 +104,7 @@ useEffect(() => {
             </button>
           </div>
 
-          <div style={{fontSize:13,color:'var(--muted)'}}>Total: <strong style={{fontSize:16,color:'var(--primary)'}}>₹{(product.price * qty).toLocaleString()}</strong></div>
+          <div style={{fontSize:13,color:'var(--muted)'}}>Total: <strong style={{fontSize:16,color:'var(--primary)'}}>€{(product.price * qty).toLocaleString()}</strong></div>
         </div>
       </div>
 

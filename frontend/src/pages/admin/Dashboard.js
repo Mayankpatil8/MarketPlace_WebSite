@@ -66,26 +66,26 @@ export default function AdminDashboard() {
           <div className="card-title">Revenue Summary (Orders)</div>
           <div className="rev-row">
             <span>Gross Revenue</span>
-            <strong>₹{(stats.revenue?.totalRevenue || 0).toLocaleString()}</strong>
+            <strong>€{(stats.revenue?.totalRevenue || 0).toLocaleString()}</strong>
           </div>
           <div className="rev-row">
             <span>Platform Fees (2%)</span>
-            <strong style={{color:'var(--success)'}}>₹{(stats.revenue?.totalFees || 0).toLocaleString()}</strong>
+            <strong style={{color:'var(--success)'}}>€{(stats.revenue?.totalFees || 0).toLocaleString()}</strong>
           </div>
           <div className="rev-row">
             <span>Supplier Payouts</span>
-            <strong style={{color:'var(--muted)'}}>₹{((stats.revenue?.totalRevenue || 0) - (stats.revenue?.totalFees || 0)).toLocaleString()}</strong>
+            <strong style={{color:'var(--muted)'}}>€{((stats.revenue?.totalRevenue || 0) - (stats.revenue?.totalFees || 0)).toLocaleString()}</strong>
           </div>
         </div>
         <div className="card" style={{padding: 24}}>
           <div className="card-title">Deal Revenue</div>
           <div className="rev-row">
             <span>Total Deal Value</span>
-            <strong>₹{(stats.dealRevenue?.totalValue || 0).toLocaleString()}</strong>
+            <strong>€{(stats.dealRevenue?.totalValue || 0).toLocaleString()}</strong>
           </div>
           <div className="rev-row">
             <span>Platform Commission (1.5%)</span>
-            <strong style={{color:'var(--success)'}}>₹{(stats.dealRevenue?.totalFees || 0).toLocaleString()}</strong>
+            <strong style={{color:'var(--success)'}}>€{(stats.dealRevenue?.totalFees || 0).toLocaleString()}</strong>
           </div>
         </div>
       </div>
@@ -98,7 +98,7 @@ export default function AdminDashboard() {
             <LineChart data={monthlyData}>
               <XAxis dataKey="month" tick={{fontSize: 12}} />
               <YAxis tick={{fontSize: 12}} />
-              <Tooltip formatter={(v) => `₹${v.toLocaleString()}`} />
+              <Tooltip formatter={(v) => `€${v.toLocaleString()}`} />
               <Legend />
               <Line type="monotone" dataKey="Revenue" stroke="#f59e0b" strokeWidth={2.5} dot={false} />
               <Line type="monotone" dataKey="Fees" stroke="#06b6d4" strokeWidth={2} dot={false} />
@@ -151,7 +151,7 @@ export default function AdminDashboard() {
                   <td>{i + 1}</td>
                   <td><strong>{p.name}</strong></td>
                   <td><span className="badge badge-blue">{p.category}</span></td>
-                  <td>₹{p.price?.toLocaleString()}</td>
+                  <td>€{p.price?.toLocaleString()}</td>
                   <td><strong>{p.totalSold}</strong></td>
                 </tr>
               ))}

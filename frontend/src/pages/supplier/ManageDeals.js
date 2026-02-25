@@ -56,7 +56,7 @@ export default function ManageDeals() {
           <form onSubmit={handleSubmit}>
             <div className="form-row">
               <div className="form-group"><label className="input-label">Deal Title *</label><input className="input" name="title" placeholder="e.g. Bulk Motor Supply — 500 units" value={form.title} onChange={handleChange} /></div>
-              <div className="form-group"><label className="input-label">Total Deal Value (₹) *</label><input className="input" type="number" name="totalValue" value={form.totalValue} onChange={handleChange} /></div>
+              <div className="form-group"><label className="input-label">Total Deal Value (€) *</label><input className="input" type="number" name="totalValue" value={form.totalValue} onChange={handleChange} /></div>
             </div>
             <div className="form-group"><label className="input-label">Description</label><textarea className="input" name="description" rows={3} placeholder="Describe the deal — products, quantities, specs..." value={form.description} onChange={handleChange} /></div>
             <div className="form-row">
@@ -77,7 +77,7 @@ export default function ManageDeals() {
             </div>
             <div className="form-group"><label className="input-label">Contract Terms</label><textarea className="input" name="contractTerms" rows={2} placeholder="Payment terms, delivery schedule..." value={form.contractTerms} onChange={handleChange} /></div>
             <div style={{background:'#fef3c7',padding:14,borderRadius:8,fontSize:13,color:'#92400e',marginBottom:16}}>
-              💡 Platform commission: 1.5% of deal value. Your earning: ₹{form.totalValue ? (Number(form.totalValue)*0.985).toLocaleString() : '—'}
+              💡 Platform commission: 1.5% of deal value. Your earning: €{form.totalValue ? (Number(form.totalValue)*0.985).toLocaleString() : '—'}
             </div>
             <button className="btn btn-primary" disabled={loading}>{loading?'Creating...':'Create Deal'}</button>
           </form>
@@ -96,8 +96,8 @@ export default function ManageDeals() {
                   <tr key={d._id}>
                     <td style={{fontSize:11}}>{d.dealNumber}</td>
                     <td><strong>{d.title}</strong><br/><span style={{fontSize:11,color:'var(--muted)'}}>{d.category}</span></td>
-                    <td>₹{d.totalValue?.toLocaleString()}</td>
-                    <td style={{color:'var(--success)'}}>₹{d.supplierEarning?.toLocaleString()}</td>
+                    <td>€{d.totalValue?.toLocaleString()}</td>
+                    <td style={{color:'var(--success)'}}>€{d.supplierEarning?.toLocaleString()}</td>
                     <td>{d.buyer?.company || d.buyer?.name || <span style={{color:'var(--muted)',fontSize:12}}>Open (seeking buyer)</span>}</td>
                     <td><span className="badge badge-blue">{d.dealType}</span></td>
                     <td><span className={`badge badge-${STATUS_COLORS[d.status]||'gray'}`}>{d.status}</span></td>

@@ -56,7 +56,7 @@ export default function Cart() {
     <div style={{maxWidth:1000}}>
       <div className="page-header">
         <h1>Shopping Cart</h1>
-        <p>{cart.length} item(s) — Total: ₹{total.toLocaleString()}</p>
+        <p>{cart.length} item(s) — Total: €{total.toLocaleString()}</p>
       </div>
 
       <div className="grid-2">
@@ -69,14 +69,14 @@ export default function Cart() {
               </div>
               <div style={{flex:1}}>
                 <div style={{fontWeight:700,marginBottom:4}}>{item.name}</div>
-                <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>₹{item.price?.toLocaleString()} per {item.unit}</div>
+                <div style={{fontSize:13,color:'var(--muted)',marginBottom:8}}>€{item.price?.toLocaleString()} per {item.unit}</div>
                 <div style={{display:'flex',alignItems:'center',gap:12}}>
                   <div style={{display:'flex',alignItems:'center',border:'1px solid var(--border)',borderRadius:6}}>
                     <button className="btn btn-outline btn-sm" style={{border:'none',borderRadius:0,padding:'4px 10px'}} onClick={()=>updateQty(item._id, item.qty-1)}>−</button>
                     <span style={{padding:'0 10px',fontWeight:700,fontSize:14}}>{item.qty}</span>
                     <button className="btn btn-outline btn-sm" style={{border:'none',borderRadius:0,padding:'4px 10px'}} onClick={()=>updateQty(item._id, item.qty+1)}>+</button>
                   </div>
-                  <span style={{fontFamily:'Syne',fontWeight:800}}>₹{(item.price*item.qty).toLocaleString()}</span>
+                  <span style={{fontFamily:'Syne',fontWeight:800}}>€{(item.price*item.qty).toLocaleString()}</span>
                   <button className="btn btn-sm" style={{background:'#fee2e2',color:'#991b1b',marginLeft:'auto'}} onClick={()=>removeItem(item._id)}><FiTrash2/></button>
                 </div>
               </div>
@@ -102,13 +102,13 @@ export default function Cart() {
               {cart.map(i=>(
                 <div key={i._id} style={{display:'flex',justifyContent:'space-between',fontSize:13,marginBottom:6}}>
                   <span>{i.name} × {i.qty}</span>
-                  <span>₹{(i.price*i.qty).toLocaleString()}</span>
+                  <span>€{(i.price*i.qty).toLocaleString()}</span>
                 </div>
               ))}
             </div>
             <div style={{display:'flex',justifyContent:'space-between',marginBottom:8}}>
               <span style={{color:'var(--muted)'}}>Subtotal</span>
-              <span>₹{total.toLocaleString()}</span>
+              <span>€{total.toLocaleString()}</span>
             </div>
             <div style={{display:'flex',justifyContent:'space-between',marginBottom:16}}>
               <span style={{color:'var(--muted)'}}>Shipping</span>
@@ -116,7 +116,7 @@ export default function Cart() {
             </div>
             <div style={{display:'flex',justifyContent:'space-between',fontFamily:'Syne',fontSize:20,fontWeight:800,marginBottom:20}}>
               <span>Total</span>
-              <span>₹{total.toLocaleString()}</span>
+              <span>€{total.toLocaleString()}</span>
             </div>
             <button className="btn btn-accent" style={{width:'100%',justifyContent:'center'}} disabled={loading} onClick={placeOrder}>
               {loading ? 'Placing Order...' : '🛒 Place Order'}

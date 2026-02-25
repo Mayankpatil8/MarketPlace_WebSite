@@ -35,7 +35,7 @@ export default function CustomerDashboard() {
         </Link>
         <Link to="/my-orders" className="card" style={{padding:24,display:'flex',gap:16,alignItems:'center',textDecoration:'none'}}>
           <div style={{width:48,height:48,borderRadius:12,background:'#d1fae5',color:'#065f46',display:'flex',alignItems:'center',justifyContent:'center',fontSize:22}}><FiPackage /></div>
-          <div><div style={{fontFamily:'Syne',fontWeight:700}}>My Orders</div><div style={{fontSize:13,color:'var(--muted)'}}>Total spend: ₹{totalSpend.toLocaleString()}</div></div>
+          <div><div style={{fontFamily:'Syne',fontWeight:700}}>My Orders</div><div style={{fontSize:13,color:'var(--muted)'}}>Total spend: €{totalSpend.toLocaleString()}</div></div>
         </Link>
       </div>
 
@@ -60,7 +60,7 @@ export default function CustomerDashboard() {
                     <tr key={o._id}>
                       <td style={{fontSize:11}}>{o.orderNumber}</td>
                       <td>{o.items?.length} item(s)</td>
-                      <td>₹{o.totalAmount?.toLocaleString()}</td>
+                      <td>€{o.totalAmount?.toLocaleString()}</td>
                       <td><span className={`badge badge-${o.status==='delivered'?'green':o.status==='pending'?'yellow':o.status==='cancelled'?'red':'blue'}`}>{o.status}</span></td>
                     </tr>
                   ))}

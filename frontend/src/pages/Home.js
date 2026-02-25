@@ -79,7 +79,7 @@ export default function Home() {
               <span>Products</span>
             </div>
             <div>
-              <strong>₹2.4Cr+</strong>
+              <strong>€2.4Cr+</strong>
               <span>Deals Closed</span>
             </div>
           </div>
