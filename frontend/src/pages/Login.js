@@ -31,11 +31,10 @@ export default function Login() {
     }
   };
 
-  const demoLogin = (role) => {
-  console.log("Demo clicked:", role); // 👈 add this
+const demoLogin = async (role) => {
   const demos = {
     customer: [
-      { email: 'customer@demmo.co', password: 'demo1234' },
+      { email: 'customer@demo.com', password: 'demo1234' },
       { email: 'customer2@demo.com', password: 'demo1234' },
     ],
     supplier: [
@@ -50,7 +49,12 @@ export default function Login() {
   if (!list || list.length === 0) return;
 
   const random = list[Math.floor(Math.random() * list.length)];
-  setForm(random); // ✅ only fills form, does NOT auto-login
+  setForm(random);
+
+  // 🔥 Auto submit (login) after filling
+  setTimeout(() => {
+    handleSubmit({ preventDefault: () => {} });
+  }, 100);
 };
 
   return (
