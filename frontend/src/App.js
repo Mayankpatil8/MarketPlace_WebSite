@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider, useAuth } from './context/AuthContext';
+import Services from "./pages/Services";
 
 // Layout
 import Layout from './components/layout/Layout';
@@ -50,6 +51,8 @@ function AppRoutes() {
         <Route path="register" element={user ? <Navigate to="/" /> : <Register />} />
         <Route path="products" element={<ProductList />} />
         <Route path="products/:id" element={<ProductDetail />} />
+        
+        <Route path="/services" element={<Services />} />
 
         {/* Customer */}
         <Route path="dashboard" element={<PrivateRoute roles={['customer']}><CustomerDashboard /></PrivateRoute>} />

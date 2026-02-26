@@ -39,10 +39,11 @@ export default function Layout() {
   const location = useLocation();
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const navItems = user ? (navConfig[user.role] || []) : [
-    { to: '/', icon: FiHome, label: 'Home' },
-    { to: '/products', icon: FiBox, label: 'Products' },
-  ];
+const navItems = user ? (navConfig[user.role] || []) : [
+  { to: '/', icon: FiHome, label: 'Home' },
+  { to: '/products', icon: FiBox, label: 'Products' },
+  { to: '/services', icon: FiFileText, label: 'Services' }, // ✅ NEW
+];
 
   const handleLogout = () => { logout(); navigate('/login'); };
 
@@ -106,11 +107,12 @@ export default function Layout() {
           </div>
           <div className="topbar-right">
             {!user && (
-              <>
-                <Link to="/login" className="btn btn-outline btn-sm">Login</Link>
-                <Link to="/register" className="btn btn-accent btn-sm">Register</Link>
-              </>
-            )}
+            <>
+              <Link to="/services" className="btn btn-outline btn-sm">Services</Link> {/* ✅ NEW */}
+              <Link to="/login" className="btn btn-outline btn-sm">Login</Link>
+              <Link to="/register" className="btn btn-accent btn-sm">Register</Link>
+            </>
+          )}
             {user && (
               <div className="topbar-user">
                 <div className="avatar sm">{user.name?.charAt(0).toUpperCase()}</div>
