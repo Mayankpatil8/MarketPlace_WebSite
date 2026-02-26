@@ -36,38 +36,6 @@ const SERVICES = [
     accent: '#7dd3fc',
   },
   {
-    id: 'trade',
-    icon: '💳',
-    tag: 'Finance',
-    title: 'Trade Finance & Insurance',
-    subtitle: 'Capital that moves with your deals.',
-    desc: 'We connect you with trusted financial partners for LC, guarantees, insurance, and working capital — integrated into your deal flow.',
-    features: [
-      'Letter of Credit & guarantees',
-      'Invoice factoring',
-      'Cargo insurance',
-      'Payment protection & escrow',
-    ],
-    cta: 'Explore Financing Options',
-    accent: '#f9a8d4',
-  },
-  {
-    id: 'logistics',
-    icon: '🚢',
-    tag: 'Supply Chain',
-    title: 'Logistics & Trade Services',
-    subtitle: 'Pan-regional. Predictable. Paperless.',
-    desc: 'End-to-end logistics, customs, and delivery services with real-time tracking and compliance support.',
-    features: [
-      'Sea, air & road freight',
-      'Customs & clearance',
-      'Warehousing & last-mile delivery',
-      'Real-time shipment tracking',
-    ],
-    cta: 'Get Logistics Quote',
-    accent: '#c4b5fd',
-  },
-  {
     id: 'consulting',
     icon: '🎯',
     tag: 'Advisory',
@@ -104,9 +72,10 @@ export default function Services() {
             Built for Industrial<br /><em>Growth & Compliance.</em>
           </h1>
           <p className="svc-hero-subtitle">
-            From certification to business strategy — everything you need to operate, scale,
-            and trade with confidence.
-          </p>
+  On our platform, we provide complete business consulting services to enrich your business
+  and help you achieve new heights. From certification to business strategy — everything you
+  need to operate, scale, and trade with confidence.
+</p>
           <div className="svc-hero__ctas">
             <Link to="/register" className="svc-primary-btn">Start Free Today →</Link>
             <Link to="/about" className="svc-secondary-btn">Learn More</Link>
