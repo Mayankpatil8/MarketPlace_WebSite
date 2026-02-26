@@ -10,7 +10,6 @@ import './Layout.css';
 
 const navConfig = {
   customer: [
-    { to: '/', icon: FiHome, label: 'Home' },
     { to: '/products', icon: FiBox, label: 'Products' },
     { to: '/dashboard', icon: FiBarChart2, label: 'Dashboard' },
     { to: '/cart', icon: FiShoppingCart, label: 'My Cart' },
@@ -18,7 +17,6 @@ const navConfig = {
     { to: '/suggestions', icon: FiStar, label: 'For You' },
   ],
   supplier: [
-    { to: '/', icon: FiHome, label: 'Home' },
     { to: '/supplier/dashboard', icon: FiBarChart2, label: 'Dashboard' },
     { to: '/supplier/products', icon: FiBox, label: 'My Products' },
     { to: '/supplier/deals', icon: FiBriefcase, label: 'Deals' },
