@@ -30,17 +30,17 @@ export default function Home() {
       {/* ================= HERO ================= */}
       <section className="hero">
         <div className="hero-content">
-          <span className="hero-badge">🏭 B2B & B2C Industrial Marketplace</span>
+          <span className="hero-badge">🏭 Buy from Verified & Trusted Suppliers</span>
 
           <h1 className="hero-title">
-            Buy & Sell Industrial Products
+            Buy Industrial Parts with Confidence
             <br />
-            <span className="accent">Faster. Smarter. Secure.</span>
+            <span className="accent">Quality. Trust. Transparency.</span>
           </h1>
 
           <p className="hero-subtitle">
-            IndustrialHub helps you discover verified suppliers, compare products,
-            close deals faster, and track your orders end-to-end on one simple platform.
+            Purchase parts only from verified and trusted suppliers. The platform takes full responsibility for
+            quality and reliability, so you always get exactly what is shown and promised.
           </p>
 
           <div className="hero-cta">
@@ -72,15 +72,15 @@ export default function Home() {
           <div className="hero-stats">
             <div>
               <strong>10,000+</strong>
-              <span>Manufacturers</span>
+              <span>Verified Suppliers</span>
             </div>
             <div>
               <strong>15,000+</strong>
-              <span>Products</span>
+              <span>Quality Products</span>
             </div>
             <div>
-              <strong>€2.4Cr+</strong>
-              <span>Deals Closed</span>
+              <strong>100%</strong>
+              <span>Trusted Deals</span>
             </div>
           </div>
         </div>
@@ -89,22 +89,22 @@ export default function Home() {
           <div className="hero-card">
             <FiZap />
             <div>
-              <div className="hc-title">Fast Deals</div>
-              <div className="hc-desc">Real-time B2B trading</div>
+              <div className="hc-title">Fast & Easy Buying</div>
+              <div className="hc-desc">Find the right parts quickly</div>
             </div>
           </div>
           <div className="hero-card">
             <FiShield />
             <div>
               <div className="hc-title">Trusted Suppliers</div>
-              <div className="hc-desc">Verified businesses only</div>
+              <div className="hc-desc">Only verified sellers allowed</div>
             </div>
           </div>
           <div className="hero-card">
             <FiPackage />
             <div>
-              <div className="hc-title">Easy Logistics</div>
-              <div className="hc-desc">Track orders end-to-end</div>
+              <div className="hc-title">Quality Guaranteed</div>
+              <div className="hc-desc">What you see is what you get</div>
             </div>
           </div>
         </div>
@@ -114,29 +114,29 @@ export default function Home() {
       <section className="section">
         <h2 className="center-title">Why Choose IndustrialHub?</h2>
         <p className="center-subtitle">
-          Everything you need for modern industrial procurement in one place.
+          A reliable platform to buy industrial products from trusted and verified suppliers.
         </p>
 
         <div className="grid-4">
           <div className="feature-card">
             <div className="feature-icon"><FiZap /></div>
-            <h3>Faster Procurement</h3>
-            <p>Find products and suppliers quickly with smart search and filters.</p>
+            <h3>Easy Procurement</h3>
+            <p>Find the right products quickly with simple search and filters.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><FiShield /></div>
-            <h3>Secure & Trusted</h3>
-            <p>All suppliers are verified for safe and reliable transactions.</p>
+            <h3>Safe & Reliable</h3>
+            <p>All suppliers are verified and the platform ensures secure transactions.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><FiTrendingUp /></div>
-            <h3>Better Decisions</h3>
-            <p>Compare prices, specs, and reviews before you buy.</p>
+            <h3>Quality First</h3>
+            <p>You get high-quality products exactly as described on the platform.</p>
           </div>
           <div className="feature-card">
             <div className="feature-icon"><FiUsers /></div>
-            <h3>Direct Connections</h3>
-            <p>Connect directly with manufacturers and distributors.</p>
+            <h3>Trusted Network</h3>
+            <p>Buy directly from reliable manufacturers and authorized suppliers.</p>
           </div>
         </div>
       </section>
@@ -173,17 +173,17 @@ export default function Home() {
           <div className="step-card">
             <FiSearch />
             <h3>Search</h3>
-            <p>Find products and suppliers across all categories.</p>
+            <p>Find products from verified and trusted suppliers.</p>
           </div>
           <div className="step-card">
             <FiCheckCircle />
-            <h3>Compare</h3>
-            <p>Compare prices, specs, and ratings to choose the best.</p>
+            <h3>Choose with Confidence</h3>
+            <p>All products are quality-checked and clearly described.</p>
           </div>
           <div className="step-card">
             <FiPackage />
-            <h3>Order & Track</h3>
-            <p>Place orders and track delivery in real time.</p>
+            <h3>Order & Receive</h3>
+            <p>Place your order and get exactly what you selected.</p>
           </div>
         </div>
       </section>
@@ -193,38 +193,33 @@ export default function Home() {
         <section className="section section-alt">
           <h2 className="center-title">Join IndustrialHub</h2>
           <p className="center-subtitle">
-            Choose your role and start using the platform today.
+            Start using a trusted platform for reliable industrial purchasing.
           </p>
 
           <div className="grid-3">
             <Link to="/register?role=customer" className="role-card">
               <span className="role-emoji">🛒</span>
-              <h3>Buyer / Startup</h3>
-              <p>Browse products, place orders, and track deliveries easily.</p>
+              <h3>Buyer</h3>
+              <p>Browse products, place orders, and get quality items with confidence.</p>
               <span className="btn btn-primary btn-sm">Register as Buyer</span>
             </Link>
 
             <Link to="/register?role=supplier" className="role-card">
               <span className="role-emoji">🏭</span>
-              <h3>Supplier / Manufacturer</h3>
-              <p>List products, receive orders, and grow your business.</p>
+              <h3>Supplier</h3>
+              <p>List your products and sell on a trusted and reliable platform.</p>
               <span className="btn btn-primary btn-sm">Register as Supplier</span>
             </Link>
 
-            <Link to="/register?role=admin" className="role-card">
-              <span className="role-emoji">⚙️</span>
-              <h3>Administrator</h3>
-              <p>Manage users, products, orders, and platform data.</p>
-              <span className="btn btn-primary btn-sm">Admin Access</span>
-            </Link>
+           
           </div>
         </section>
       )}
 
       {/* ================= FINAL CTA ================= */}
       <section className="final-cta">
-        <h2>Start Trading Smarter Today</h2>
-        <p>Join thousands of businesses using IndustrialHub for procurement.</p>
+        <h2>Buy from Trusted Suppliers Today</h2>
+        <p>Get high-quality products with full confidence and platform assurance.</p>
         <Link to="/register" className="btn btn-primary btn-lg">
           Create Free Account <FiArrowRight />
         </Link>

@@ -18,7 +18,7 @@ export const defaultProducts = [
     name: "ABB", 
     company: "ABB (Switzerland / EU)" 
   },
-  images: ["/images/motor.jpg"],
+  images: ["/images/motor1.jpg"],
   description: "High-performance industrial motor drive manufactured in Europe for industrial automation and heavy-duty applications.",
   specifications: {
     Power: "0.75–250 kW",
@@ -41,7 +41,7 @@ export const defaultProducts = [
   views: 850,
   isRestricted: false,
   supplier: { name: "Siemens Energy", company: "Siemens Energy (Germany / EU)" },
-  images: ["/images/solar.jpg"],
+  images: ["/images/solar1.jpg"],
   description: "High-efficiency European-manufactured mono PERC solar panel for industrial and commercial installations.",
   specifications: {
     Power: "550W",
@@ -64,7 +64,7 @@ export const defaultProducts = [
   views: 620,
   isRestricted: false,
   supplier: { name: "Bosch Rexroth", company: "Bosch Rexroth (Germany / EU)" },
-  images: ["/images/fan.jpg"],
+  images: ["/images/fan2.jpg"],
   description: "High-performance European heavy-duty industrial fan for factories and warehouses.",
   specifications: {
     Size: "24 inch",
@@ -110,7 +110,7 @@ export const defaultProducts = [
   views: 990,
   isRestricted: false,
   supplier: { name: "Siemens", company: "Siemens (Germany / EU)" },
-  images: ["/images/contoler.jpg"],
+  images: ["/images/contoler1.jpg"],
   description: "Compact European PLC controller for industrial automation and control systems.",
   specifications: {
     CPU: "1214C",
@@ -133,7 +133,7 @@ export const defaultProducts = [
   views: 540,
   isRestricted: false,
   supplier: { name: "Schneider Electric", company: "Schneider Electric (France / EU)" },
-  images: ["/images/contactor.jpg"],
+  images: ["/images/contactor2.jpg"],
   description: "European-manufactured heavy-duty industrial power contactor for motor and power control applications.",
   specifications: {
     Current: "32A",
